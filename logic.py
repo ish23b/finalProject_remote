@@ -1,6 +1,5 @@
 from PyQt6.QtWidgets import *
 from gui import *
-from television import *
 
 class Logic(QMainWindow, Ui_MainWindow):
 
@@ -90,7 +89,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         """
         if self.__status:
             self.__muted = False
-            if self.__volume < Television.MAX_VOLUME:
+            if self.__volume < Logic.MAX_VOLUME:
                 self.__volume += 1
 
     def volume_down(self) -> None:
@@ -100,5 +99,5 @@ class Logic(QMainWindow, Ui_MainWindow):
         """
         if self.__status:
             self.__muted = False
-            if self.__volume > Television.MIN_VOLUME:
+            if self.__volume > Logic.MIN_VOLUME:
                 self.__volume -= 1
